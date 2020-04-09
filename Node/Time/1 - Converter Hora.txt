@@ -1,0 +1,28 @@
+
+function timeConversion(s) {
+    
+    var palavra = ''
+    
+    var hora= s[0]+ s[1]
+    if ( s[8] == 'P'){
+        if(parseInt(hora)< 12){
+            hora= parseInt(hora) + 12
+        }
+    }
+    if ( s[8] == 'A'){
+        
+        if(parseInt(hora)> 12){
+            hora= parseInt(hora) - 12
+        }
+    }
+
+    if( parseInt(hora) == 0 || ( parseInt(hora)== 12 && s[8]== 'A')  ){
+        hora = '00'
+    }
+
+    palavra = hora
+    for(var i=2; i< s.length -2; i++){
+        palavra += s[i]
+    }
+    return  palavra
+}
